@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Petroleum blue background */
+    --bg-primary: 10 14 26;
+    --bg-surface: 20 24 36;
+    --bg-hover: 31 41 55;
+
+    /* Golden accent */
+    --accent: 245 230 211;
+    --accent-hover: 232 213 184;
+
+    /* Text */
+    --text-primary: 232 234 240;
+    --text-secondary: 156 163 175;
+    --text-muted: 107 114 128;
+
+    /* Status colors */
+    --success: 16 185 129;
+    --warning: 245 158 11;
+    --error: 239 68 68;
+    --info: 59 130 246;
+
+    /* Component colors */
+    --border: 31 41 55;
+    --input: 20 24 36;
+    --ring: 245 230 211;
+
+    /* Shadows and overlays */
+    --overlay: 0 0 0 / 0.5;
+
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer utilities {
+  .bg-bg-primary {
+    background-color: rgb(var(--bg-primary));
+  }
+
+  .bg-bg-surface {
+    background-color: rgb(var(--bg-surface));
+  }
+
+  .bg-bg-hover {
+    background-color: rgb(var(--bg-hover));
+  }
+
+  .bg-accent {
+    background-color: rgb(var(--accent));
+  }
+
+  .text-accent {
+    color: rgb(var(--accent));
+  }
+
+  .text-text-primary {
+    color: rgb(var(--text-primary));
+  }
+
+  .text-text-secondary {
+    color: rgb(var(--text-secondary));
+  }
+
+  .text-text-muted {
+    color: rgb(var(--text-muted));
+  }
+
+  .text-success {
+    color: rgb(var(--success));
+  }
+
+  .text-warning {
+    color: rgb(var(--warning));
+  }
+
+  .text-error {
+    color: rgb(var(--error));
+  }
+
+  .border-border {
+    border-color: rgb(var(--border));
+  }
+}
