@@ -1,0 +1,86 @@
+/**
+ * LUMEN Custom Font System
+ * Geometric perfection through mathematical precision
+ */
+
+@font-face {
+  font-family: 'LUMEN Display';
+  src: url('/fonts/lumen-font.svg#LUMENDisplay') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback to system fonts for body text - faster, more readable */
+@font-face {
+  font-family: 'LUMEN Text';
+  src: local(-apple-system), local(BlinkMacSystemFont), local('SF Pro Text');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   FONT LOADING OPTIMIZATION
+   ======================================== */
+
+/* Show fallback immediately while custom font loads */
+.font-loading {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+.font-loaded {
+  font-family: 'LUMEN Display', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+/* ========================================
+   TYPOGRAPHY COMPONENTS
+   ======================================== */
+
+/* Display text - Hero headlines */
+.text-display {
+  font-family: 'LUMEN Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+/* Body text - Maximum readability */
+.text-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+/* Mono text - Data and code */
+.text-mono {
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+/* ========================================
+   OPTICAL ADJUSTMENTS
+   ======================================== */
+
+/* Larger text needs tighter spacing */
+.text-6xl, .text-5xl, .text-4xl {
+  letter-spacing: -0.035em;
+}
+
+.text-3xl, .text-2xl, .text-xl {
+  letter-spacing: -0.02em;
+}
+
+/* Uppercase needs wider spacing */
+.uppercase {
+  letter-spacing: 0.05em;
+}
+
+/* All caps at small sizes needs even more */
+.text-sm.uppercase,
+.text-xs.uppercase {
+  letter-spacing: 0.1em;
+}

@@ -1,12 +1,20 @@
 /**
- * Button Component - LUMEN Design System
+ * Button Component - Million-Dollar Aesthetic
+ *
+ * Design Principles:
+ * - Flat design, no shadows
+ * - Crisp borders, perfect padding
+ * - Subtle hover states that feel inevitable
+ * - Fast, satisfying interactions
+ * - Accessible by default
+ *
  * @module components/ui/Button
  */
 
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'gold';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -28,17 +36,19 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary text-primary-foreground hover:bg-petroleum-700 active:bg-petroleum-800 border-petroleum-500',
+    'bg-black text-white border-2 border-black hover:bg-white hover:text-black hover:border-black',
   secondary:
-    'bg-secondary text-secondary-foreground hover:bg-golden-400 active:bg-golden-500 border-golden-200',
+    'bg-white text-black border-2 border-black hover:bg-black hover:text-white',
   ghost:
-    'bg-transparent text-foreground hover:bg-petroleum-800 active:bg-petroleum-700 border-transparent',
+    'bg-transparent text-black border-2 border-transparent hover:border-black',
+  gold:
+    'bg-[#D4AF37] text-black border-2 border-[#D4AF37] hover:bg-[#B8941F] hover:border-[#B8941F]',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-6 py-3 text-lg',
+  sm: 'px-3 py-1.5 text-sm min-h-[32px]',
+  md: 'px-5 py-2.5 text-base min-h-[44px]',
+  lg: 'px-7 py-3.5 text-lg min-h-[56px]',
 };
 
 /**
@@ -70,11 +80,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          'inline-flex items-center justify-center gap-2 rounded-md border font-medium',
-          'transition-all duration-200 ease-in-out',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+          'inline-flex items-center justify-center gap-2 font-medium',
+          'transition-all duration-150 ease-out',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2',
           'disabled:opacity-50 disabled:pointer-events-none',
           'touch-manipulation select-none',
+          'active:scale-[0.98]',
           variantStyles[variant],
           sizeStyles[size],
           fullWidth && 'w-full',

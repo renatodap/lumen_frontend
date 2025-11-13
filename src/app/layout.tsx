@@ -1,25 +1,29 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '../styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+import '../styles/design-system.css';
+import '../styles/fonts.css';
 
 export const metadata: Metadata = {
   title: 'LUMEN - Personal Operating System Enforcer',
-  description: 'Production-ready personal operating system with AI-powered enforcement',
+  description: 'Win every day. Your personal operating system enforcer.',
   manifest: '/manifest.json',
-  themeColor: '#F5E6D3',
+  themeColor: '#FFFFFF',
   viewport: {
     width: 'device-width',
     initialScale: 1,
     maximumScale: 1,
+    userScalable: false,
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="bg-bg-primary text-text-primary antialiased">{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-white text-black antialiased">{children}</body>
     </html>
   );
 }

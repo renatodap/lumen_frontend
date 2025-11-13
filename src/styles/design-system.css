@@ -1,0 +1,284 @@
+/**
+ * LUMEN Design System v2.0
+ * Million-Dollar Aesthetic: Brutally Minimal, Mathematically Perfect
+ *
+ * Philosophy:
+ * - Less is exponentially more
+ * - Geometric perfection over decoration
+ * - Whitespace as a luxury element
+ * - Typography as the hero
+ * - Subtle motion that feels inevitable
+ */
+
+:root {
+  /* ========================================
+     COLOR SYSTEM - Extreme Restraint
+     ======================================== */
+
+  /* Base - Pure minimalism */
+  --color-void: #000000;          /* Absolute black */
+  --color-paper: #FFFFFF;         /* Pure white */
+  --color-ash: #F5F5F5;           /* Barely-there gray */
+  --color-stone: #E8E8E8;         /* Subtle surface */
+
+  /* Accent - Single focal point */
+  --color-gold: #D4AF37;          /* Metallic gold - the only color */
+  --color-gold-dark: #B8941F;     /* Gold hover state */
+  --color-gold-light: #F5E6C8;    /* Gold tint */
+
+  /* Semantic - Derived from base */
+  --color-text-primary: var(--color-void);
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-border: var(--color-stone);
+  --color-surface: var(--color-paper);
+  --color-surface-raised: var(--color-ash);
+
+  /* ========================================
+     TYPOGRAPHY SYSTEM - Custom Geometric
+     ======================================== */
+
+  /* Font stacks - System fonts as fallback */
+  --font-display: 'LUMEN Display', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-text: 'LUMEN Text', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Courier New', monospace;
+
+  /* Type scale - Perfect fourth (1.333) */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.333rem;     /* 21px */
+  --text-2xl: 1.777rem;    /* 28px */
+  --text-3xl: 2.369rem;    /* 38px */
+  --text-4xl: 3.157rem;    /* 50px */
+  --text-5xl: 4.209rem;    /* 67px */
+  --text-6xl: 5.61rem;     /* 90px */
+
+  /* Line heights - Rhythm */
+  --leading-tight: 1.2;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter spacing - Optical precision */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ========================================
+     SPACING SYSTEM - Golden Ratio
+     ======================================== */
+
+  /* Base unit: 4px, scaled by golden ratio (1.618) */
+  --space-1: 0.25rem;      /* 4px */
+  --space-2: 0.5rem;       /* 8px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.618rem;     /* 26px - φ */
+  --space-6: 2.618rem;     /* 42px - φ² */
+  --space-7: 4.236rem;     /* 68px - φ³ */
+  --space-8: 6.854rem;     /* 110px - φ⁴ */
+  --space-9: 11.09rem;     /* 177px - φ⁵ */
+
+  /* Semantic spacing */
+  --space-gutter: var(--space-4);
+  --space-section: var(--space-8);
+  --space-page: var(--space-9);
+
+  /* ========================================
+     LAYOUT SYSTEM - Precise Grid
+     ======================================== */
+
+  /* Container widths */
+  --container-xs: 20rem;    /* 320px */
+  --container-sm: 28rem;    /* 448px */
+  --container-md: 40rem;    /* 640px */
+  --container-lg: 60rem;    /* 960px */
+  --container-xl: 80rem;    /* 1280px */
+
+  /* Border radius - Subtle curves */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;   /* 2px */
+  --radius-base: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-full: 9999px;   /* Pill shape */
+
+  /* Border widths */
+  --border-thin: 1px;
+  --border-base: 2px;
+  --border-thick: 4px;
+
+  /* ========================================
+     ELEVATION - Minimal Shadows
+     ======================================== */
+
+  /* No drop shadows - use subtle borders instead */
+  --elevation-1: 0 0 0 var(--border-thin) var(--color-border);
+  --elevation-2: 0 0 0 var(--border-base) var(--color-border);
+  --elevation-focus: 0 0 0 3px var(--color-gold-light);
+
+  /* ========================================
+     MOTION SYSTEM - Inevitable Ease
+     ======================================== */
+
+  /* Duration - Fast feels premium */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 400ms;
+
+  /* Easing - Natural motion */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  /* ========================================
+     Z-INDEX SYSTEM - Layering
+     ======================================== */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal: 1300;
+  --z-popover: 1400;
+  --z-tooltip: 1500;
+}
+
+/* ========================================
+   GLOBAL RESETS - Clean Foundation
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-paper);
+}
+
+/* ========================================
+   TYPOGRAPHY - Perfect Hierarchy
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+h1 { font-size: var(--text-6xl); }
+h2 { font-size: var(--text-5xl); }
+h3 { font-size: var(--text-4xl); }
+h4 { font-size: var(--text-3xl); }
+h5 { font-size: var(--text-2xl); }
+h6 { font-size: var(--text-xl); }
+
+p {
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+/* ========================================
+   UTILITY CLASSES - Composable Design
+   ======================================== */
+
+/* Text utilities */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary { color: var(--color-text-tertiary); }
+.text-gold { color: var(--color-gold); }
+
+/* Font weights */
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+/* Letter spacing */
+.tracking-tight { letter-spacing: var(--tracking-tight); }
+.tracking-normal { letter-spacing: var(--tracking-normal); }
+.tracking-wide { letter-spacing: var(--tracking-wide); }
+.tracking-wider { letter-spacing: var(--tracking-wider); }
+.tracking-widest { letter-spacing: var(--tracking-widest); }
+
+/* Display utilities */
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+/* ========================================
+   ANIMATION CLASSES - Micro-interactions
+   ======================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-4));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--duration-slow) var(--ease-out);
+}
+
+.animate-pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+/* Transition utilities */
+.transition-all {
+  transition: all var(--duration-base) var(--ease-smooth);
+}
+
+.transition-colors {
+  transition: color var(--duration-fast) var(--ease-smooth),
+              background-color var(--duration-fast) var(--ease-smooth),
+              border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.transition-transform {
+  transition: transform var(--duration-base) var(--ease-smooth);
+}
